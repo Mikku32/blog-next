@@ -2,7 +2,7 @@ import React from "react";
 import BlogCard from "./blogCard";
 
 const BlogHome = async () => {
-  const blog: Blog[] = await fetch("http://localhost:3001/Blog").then((res) =>
+  const blog: Blog[] = await fetch("http://localhost:3001/Blog",{cache:"no-store"}).then((res) =>
     res.json()
   );
   return (

@@ -18,11 +18,16 @@ const BlogCard = async ({ blog }: { blog: Blog }) => {
         </p>
 
         <div className="flex mt-auto  gap-3  justify-end align-bottom">
+          <Link href={`/post/edit/${blog.id}`}>
           <Button isIconOnly color="success" variant="ghost" size="sm">
             <MdEdit />
           </Button>
+          </Link>
 
-          <Button isIconOnly color="danger" variant="ghost" size="sm">
+          <Button isIconOnly color="danger" variant="ghost" size="sm" onClick={ async(e) =>  {
+e.preventDefault()
+await fetch(`http://localhost:3001/Blog/${blog.id}`,{method:"DELETE"})
+          }}>
             <MdDelete />
           </Button>
         </div>
