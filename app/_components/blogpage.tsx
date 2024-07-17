@@ -6,7 +6,7 @@ const BlogHome = async () => {
     res.json()
   );
   return (
-    <div className=" mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
+    <div className=" mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full ">
       {blog.map((blog) => (
         <BlogCard key={blog.id} blog={blog} />
       ))}
